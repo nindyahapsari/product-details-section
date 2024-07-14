@@ -8,11 +8,11 @@ import Carousel from "@/components/Carousel";
 import AddToCartButton from "@/components/AddToCartButton";
 import QuantityButton from "@/components/QuantityButton";
 
+const URL = process.env.DATA_URL;
+
 const fetchData = async () => {
   try {
-    const response = await fetch(
-      "https://www.greatfrontend.com/api/projects/challenges/e-commerce/products/voyager-hoodie"
-    );
+    const response = await fetch(URL);
     return response.json();
   } catch (error) {
     console.error(error);
