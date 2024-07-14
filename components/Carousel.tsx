@@ -2,60 +2,51 @@
 
 import Image from "next/image";
 
-export default function Carousel() {
+type ImageProps = {
+  color: string;
+  image_url: string;
+};
+
+type CarouselProps = {
+  images: ImageProps[];
+};
+
+export default function Carousel({ images }: CarouselProps) {
   return (
     <>
       <div className="carousel w-full">
-        <div id="item1" className="carousel-item w-full">
-          <Image
-            src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg"
-            className="w-full"
-            alt="product image"
-            width={500}
-            height={500}
-          />
-        </div>
-        <div id="item2" className="carousel-item w-full">
-          <Image
-            src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg"
-            className="w-full"
-            alt="product image"
-            width={500}
-            height={500}
-          />
-        </div>
-        <div id="item3" className="carousel-item w-full">
-          <Image
-            src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
-            className="w-full"
-            alt="product image"
-            width={500}
-            height={500}
-          />
-        </div>
-        <div id="item4" className="carousel-item w-full">
-          <Image
-            src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg"
-            className="w-full"
-            alt="product image"
-            width={500}
-            height={500}
-          />
-        </div>
+        {images.map((image, index) => (
+          <div
+            key={index}
+            id={`item${index + 1}`}
+            className="carousel-item w-full"
+          >
+            <Image
+              src={image.image_url}
+              className="w-full"
+              alt="product image"
+              width={400}
+              height={500}
+            />
+          </div>
+        ))}
       </div>
-      <div className="flex w-full justify-center gap-2 py-2">
-        <a href="#item1" className="btn btn-xs">
-          1
-        </a>
-        <a href="#item2" className="btn btn-xs">
-          2
-        </a>
-        <a href="#item3" className="btn btn-xs">
-          3
-        </a>
-        <a href="#item4" className="btn btn-xs">
-          4
-        </a>
+      <div className="flex w-full gap-2 p-2 justify-between overflow-x-auto no-scrollbar">
+        {images.map((image, index) => (
+          <a
+            key={index}
+            href={`#item${index + 1}`}
+            className="btn p-0 rounded-md size-24 h-auto"
+          >
+            <Image
+              src={image.image_url}
+              className="object-contain"
+              alt="product image"
+              width={500}
+              height={0}
+            />
+          </a>
+        ))}
       </div>
     </>
   );
