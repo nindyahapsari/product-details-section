@@ -8,7 +8,7 @@ import Carousel from "@/components/Carousel";
 import AddToCartButton from "@/components/AddToCartButton";
 import QuantityButton from "@/components/QuantityButton";
 
-const URL = process.env.DATA_URL;
+const URL = process.env.DATA_URL || "";
 
 const fetchData = async () => {
   try {
