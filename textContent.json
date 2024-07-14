@@ -1,0 +1,31 @@
+{
+  "features": {
+    "title": "Features",
+    "contents": [
+      "Designed for comfort and durability.",
+      "Soft, breathable fabric ideal for travel and adventure.",
+      "Large front pocket and adjustable hood.",
+      "Minimalist design pairs well with any style.",
+      "Made with eco-conscious materials."
+    ]
+  },
+
+  "fabricAndCare": {
+    "title": "Fabric & Care",
+    "contents": [
+      "Machine wash cold on a gentle cycle.",
+      "Tumble dry low or hang to dry.",
+      "Do not use fabric softeners or bleach.",
+      "Iron on a low setting if necessary."
+    ]
+  },
+
+  "shipping": {
+    "title": "Shipping",
+    "contents": [
+      "Free standard shipping on all orders - no minimum spend required.",
+      "Expedited shipping available at an additional cost.",
+      "Package in biodegradable to reduce environmental impact."
+    ]
+  }
+}

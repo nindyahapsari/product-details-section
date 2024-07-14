@@ -1,113 +1,86 @@
+import CollapseBox from "@/components/collapse/CollapseBox";
+import SizeOptions from "@/components/SizeOptions";
+import Ratings from "@/components/Ratings";
+import Badge from "@/components/Badge";
+import textContent from "../textContent.json";
+import ColorOptions from "@/components/ColorOptions";
+import Carousel from "@/components/Carousel";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+    <div className="h-screen px-4 py-8 grid grid-cols-4 grid-flow-row auto-rows-auto text-neutral-600 desktop:max-w-7xl desktop:mx-auto desktop:grid-cols-12 desktop:gap-8">
+      <div className="bg-green-400 col-span-4 desktop:col-span-6 desktop:my-4">
+        <Carousel />
+      </div>
+      <div className="col-span-4 desktop:col-span-6">
+        <div className="my-4 text-4xl font-medium text-neutral-900 desktop:text-5xl">
+          Voyager Hoodie
+        </div>
+        <div className="flex flex-col gap-y-4">
+          <div className="flex flex-row">
+            <p className="text-3xl">$76</p>
+            <s className="mx-4 self-end">$95</s>
+          </div>
+          <Badge />
+          <Ratings />
+        </div>
+        <div className="my-4">
+          <p>
+            The Voyager Hoodie is for the explorer at heart. Its durable fabric
+            and roomy pockters are perfect for those who are always searching
+            for the next adventures.{" "}
+          </p>
+        </div>
+        <div className="">
+          <p className="text-sm">Available Colors</p>
+          <ColorOptions />
+        </div>
+
+        <div className="my-8">
+          <p className="text-sm">Available Sizes</p>
+          <SizeOptions />
+        </div>
+        <div className="">
+          <p className="text-sm">Quantity</p>
+          <div className="my-4 w-3/6 tablet:w-1/3 flex flex-row flex-wrap justify-between border border-neutral-200 rounded-lg bg-gray-100">
+            <button className="btn btn-ghost btn-sm text-base hover:border-indigo-600 active:border-indigo-600">
+              -
+            </button>
+            <input
+              type="text"
+              className="w-20 border-none text-center bg-transparent"
+              value="1"
+              readOnly
             />
-          </a>
+            <button className="btn btn-ghost text-base btn-sm hover:border-indigo-600 active:border-indigo-600">
+              +
+            </button>
+          </div>
+        </div>
+        <div className="my-4">
+          <button className="btn w-full bg-indigo-700 text-white hover:bg-indigo-800">
+            Add to cart
+          </button>
+        </div>
+        <div className="flex flex-col gap-y-4 mb-8">
+          <CollapseBox
+            key={textContent.features.contents[0] + "1"}
+            title={textContent.features.title}
+            contents={textContent.features.contents}
+          />
+          <CollapseBox
+            key={textContent.fabricAndCare.contents[0] + "2"}
+            title={textContent.fabricAndCare.title}
+            contents={textContent.fabricAndCare.contents}
+          />
+          <CollapseBox
+            key={textContent.shipping.contents[0] + "3"}
+            title={textContent.shipping.title}
+            contents={textContent.shipping.contents}
+          />
         </div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
