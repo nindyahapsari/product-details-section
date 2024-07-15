@@ -35,8 +35,6 @@ In this project, I created a responsive product details page that includes optio
 - **Tailwind CSS**
 - **Next.js**
 - **React.js**
-- **React Hook Form** for form handling
-- **Zod** for validation
 - **Daisy UI** for frontend components
 
 ## Screenshots
